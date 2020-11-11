@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+      stage('Start') {
+        steps {
+          dir('a/'){
+               sh 'pwd'
+              sh 'terraform -v'
+              sh 'terraform init'
+              sh 'terraform validate'
+                          }
+          }
+        }
+      }
+    }
